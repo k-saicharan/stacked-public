@@ -1,0 +1,39 @@
+# Public repository CI: analyse and test on every push.
+#
+# Signed APK and AAB releases are built in the private working repository,
+# where the upload keystore and its four Actions secrets live. The keystore is
+# injected at build time and is never committed. Duplicating signing material
+# into a public repository would be the wrong trade, so this workflow verifies
+# the code and stops there.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Test
+        run: flutter test

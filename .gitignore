@@ -1,0 +1,24 @@
+# Flutter/Dart
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# Signing — never commit
+*.jks
+*.keystore
+android/key.properties
+
+# Local logs and exports — never commit
+backups/
+dashboard/data.json
+tracker_export_*.json
+*.env
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store

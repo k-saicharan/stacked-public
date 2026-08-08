@@ -1,0 +1,573 @@
+{
+ "sourceFile": "sample-data.json (synthetic demo data, not real shift records)",
+ "range": {
+  "from": "2026-01-05",
+  "to": "2026-03-19"
+ },
+ "meta": {
+  "sessions": 54,
+  "days": 54,
+  "pallets": 823,
+  "items": 49108,
+  "target": 1147,
+  "hitRate": 7,
+  "itemsMed": 899,
+  "itemsMean": 909,
+  "palletsMed": 16,
+  "avgPalletMed": 61,
+  "paceMed": 120.0,
+  "paceN": 54
+ },
+ "byShift": {
+  "morning": {
+   "n": 20,
+   "itemsMed": 899,
+   "paceMed": 121.7,
+   "palletsMed": 15,
+   "hit": 1
+  },
+  "evening": {
+   "n": 15,
+   "itemsMed": 1013,
+   "paceMed": 137.8,
+   "palletsMed": 17,
+   "hit": 3
+  },
+  "night": {
+   "n": 19,
+   "itemsMed": 834,
+   "paceMed": 112.4,
+   "palletsMed": 13,
+   "hit": 0
+  }
+ },
+ "weekly": [
+  {
+   "week": "W02",
+   "items": 4396,
+   "sessions": 5,
+   "pallets": 67
+  },
+  {
+   "week": "W03",
+   "items": 3889,
+   "sessions": 5,
+   "pallets": 60
+  },
+  {
+   "week": "W04",
+   "items": 5372,
+   "sessions": 5,
+   "pallets": 89
+  },
+  {
+   "week": "W05",
+   "items": 4675,
+   "sessions": 5,
+   "pallets": 82
+  },
+  {
+   "week": "W06",
+   "items": 4351,
+   "sessions": 5,
+   "pallets": 74
+  },
+  {
+   "week": "W07",
+   "items": 4805,
+   "sessions": 5,
+   "pallets": 85
+  },
+  {
+   "week": "W08",
+   "items": 4068,
+   "sessions": 5,
+   "pallets": 73
+  },
+  {
+   "week": "W09",
+   "items": 3876,
+   "sessions": 5,
+   "pallets": 60
+  },
+  {
+   "week": "W10",
+   "items": 5132,
+   "sessions": 5,
+   "pallets": 83
+  },
+  {
+   "week": "W11",
+   "items": 5110,
+   "sessions": 5,
+   "pallets": 90
+  },
+  {
+   "week": "W12",
+   "items": 3434,
+   "sessions": 4,
+   "pallets": 60
+  }
+ ],
+ "sessions": [
+  {
+   "d": "2026-01-05",
+   "s": "M",
+   "i": 855,
+   "p": 15,
+   "pace": 130.2,
+   "extra": false
+  },
+  {
+   "d": "2026-01-06",
+   "s": "M",
+   "i": 880,
+   "p": 13,
+   "pace": 102.4,
+   "extra": false
+  },
+  {
+   "d": "2026-01-07",
+   "s": "M",
+   "i": 698,
+   "p": 10,
+   "pace": 106.3,
+   "extra": false
+  },
+  {
+   "d": "2026-01-08",
+   "s": "M",
+   "i": 1143,
+   "p": 17,
+   "pace": 137.7,
+   "extra": false
+  },
+  {
+   "d": "2026-01-09",
+   "s": "M",
+   "i": 820,
+   "p": 12,
+   "pace": 98.1,
+   "extra": false
+  },
+  {
+   "d": "2026-01-12",
+   "s": "N",
+   "i": 792,
+   "p": 13,
+   "pace": 117.1,
+   "extra": false
+  },
+  {
+   "d": "2026-01-13",
+   "s": "N",
+   "i": 606,
+   "p": 8,
+   "pace": 90.2,
+   "extra": false
+  },
+  {
+   "d": "2026-01-14",
+   "s": "N",
+   "i": 748,
+   "p": 11,
+   "pace": 106.9,
+   "extra": false
+  },
+  {
+   "d": "2026-01-15",
+   "s": "N",
+   "i": 760,
+   "p": 10,
+   "pace": 102.2,
+   "extra": false
+  },
+  {
+   "d": "2026-01-16",
+   "s": "N",
+   "i": 983,
+   "p": 18,
+   "pace": 116.2,
+   "extra": false
+  },
+  {
+   "d": "2026-01-19",
+   "s": "E",
+   "i": 1004,
+   "p": 16,
+   "pace": 121.8,
+   "extra": false
+  },
+  {
+   "d": "2026-01-20",
+   "s": "E",
+   "i": 1268,
+   "p": 24,
+   "pace": 159.1,
+   "extra": false
+  },
+  {
+   "d": "2026-01-21",
+   "s": "E",
+   "i": 1162,
+   "p": 17,
+   "pace": 145.0,
+   "extra": false
+  },
+  {
+   "d": "2026-01-22",
+   "s": "E",
+   "i": 846,
+   "p": 15,
+   "pace": 109.2,
+   "extra": false
+  },
+  {
+   "d": "2026-01-23",
+   "s": "E",
+   "i": 1092,
+   "p": 17,
+   "pace": 155.9,
+   "extra": false
+  },
+  {
+   "d": "2026-01-26",
+   "s": "M",
+   "i": 860,
+   "p": 17,
+   "pace": 129.1,
+   "extra": false
+  },
+  {
+   "d": "2026-01-27",
+   "s": "M",
+   "i": 932,
+   "p": 14,
+   "pace": 125.3,
+   "extra": false
+  },
+  {
+   "d": "2026-01-28",
+   "s": "M",
+   "i": 993,
+   "p": 17,
+   "pace": 120.3,
+   "extra": false
+  },
+  {
+   "d": "2026-01-29",
+   "s": "M",
+   "i": 990,
+   "p": 15,
+   "pace": 121.6,
+   "extra": false
+  },
+  {
+   "d": "2026-01-30",
+   "s": "M",
+   "i": 900,
+   "p": 19,
+   "pace": 133.3,
+   "extra": false
+  },
+  {
+   "d": "2026-02-02",
+   "s": "N",
+   "i": 834,
+   "p": 16,
+   "pace": 118.2,
+   "extra": false
+  },
+  {
+   "d": "2026-02-03",
+   "s": "N",
+   "i": 898,
+   "p": 13,
+   "pace": 112.7,
+   "extra": false
+  },
+  {
+   "d": "2026-02-04",
+   "s": "N",
+   "i": 1022,
+   "p": 18,
+   "pace": 121.8,
+   "extra": false
+  },
+  {
+   "d": "2026-02-05",
+   "s": "N",
+   "i": 884,
+   "p": 16,
+   "pace": 131.6,
+   "extra": false
+  },
+  {
+   "d": "2026-02-06",
+   "s": "N",
+   "i": 713,
+   "p": 11,
+   "pace": 93.2,
+   "extra": false
+  },
+  {
+   "d": "2026-02-09",
+   "s": "E",
+   "i": 913,
+   "p": 18,
+   "pace": 117.4,
+   "extra": false
+  },
+  {
+   "d": "2026-02-10",
+   "s": "E",
+   "i": 1095,
+   "p": 18,
+   "pace": 134.0,
+   "extra": false
+  },
+  {
+   "d": "2026-02-11",
+   "s": "E",
+   "i": 978,
+   "p": 18,
+   "pace": 137.8,
+   "extra": false
+  },
+  {
+   "d": "2026-02-12",
+   "s": "E",
+   "i": 1013,
+   "p": 16,
+   "pace": 120.0,
+   "extra": false
+  },
+  {
+   "d": "2026-02-13",
+   "s": "E",
+   "i": 806,
+   "p": 15,
+   "pace": 119.7,
+   "extra": false
+  },
+  {
+   "d": "2026-02-16",
+   "s": "M",
+   "i": 660,
+   "p": 12,
+   "pace": 98.8,
+   "extra": false
+  },
+  {
+   "d": "2026-02-17",
+   "s": "M",
+   "i": 874,
+   "p": 15,
+   "pace": 114.9,
+   "extra": false
+  },
+  {
+   "d": "2026-02-18",
+   "s": "M",
+   "i": 832,
+   "p": 16,
+   "pace": 108.5,
+   "extra": false
+  },
+  {
+   "d": "2026-02-19",
+   "s": "M",
+   "i": 898,
+   "p": 17,
+   "pace": 121.7,
+   "extra": false
+  },
+  {
+   "d": "2026-02-20",
+   "s": "M",
+   "i": 804,
+   "p": 13,
+   "pace": 108.6,
+   "extra": false
+  },
+  {
+   "d": "2026-02-23",
+   "s": "N",
+   "i": 609,
+   "p": 10,
+   "pace": 87.9,
+   "extra": true
+  },
+  {
+   "d": "2026-02-24",
+   "s": "N",
+   "i": 843,
+   "p": 12,
+   "pace": 122.3,
+   "extra": false
+  },
+  {
+   "d": "2026-02-25",
+   "s": "N",
+   "i": 687,
+   "p": 10,
+   "pace": 90.4,
+   "extra": false
+  },
+  {
+   "d": "2026-02-26",
+   "s": "N",
+   "i": 966,
+   "p": 15,
+   "pace": 116.1,
+   "extra": false
+  },
+  {
+   "d": "2026-02-27",
+   "s": "N",
+   "i": 771,
+   "p": 13,
+   "pace": 103.3,
+   "extra": false
+  },
+  {
+   "d": "2026-03-02",
+   "s": "E",
+   "i": 1048,
+   "p": 16,
+   "pace": 157.6,
+   "extra": false
+  },
+  {
+   "d": "2026-03-03",
+   "s": "E",
+   "i": 982,
+   "p": 21,
+   "pace": 147.7,
+   "extra": false
+  },
+  {
+   "d": "2026-03-04",
+   "s": "E",
+   "i": 1063,
+   "p": 17,
+   "pace": 154.2,
+   "extra": false
+  },
+  {
+   "d": "2026-03-05",
+   "s": "E",
+   "i": 880,
+   "p": 13,
+   "pace": 119.3,
+   "extra": false
+  },
+  {
+   "d": "2026-03-06",
+   "s": "E",
+   "i": 1159,
+   "p": 16,
+   "pace": 146.8,
+   "extra": false
+  },
+  {
+   "d": "2026-03-09",
+   "s": "M",
+   "i": 931,
+   "p": 15,
+   "pace": 138.9,
+   "extra": false
+  },
+  {
+   "d": "2026-03-10",
+   "s": "M",
+   "i": 1028,
+   "p": 16,
+   "pace": 128.0,
+   "extra": false
+  },
+  {
+   "d": "2026-03-11",
+   "s": "M",
+   "i": 989,
+   "p": 20,
+   "pace": 120.0,
+   "extra": false
+  },
+  {
+   "d": "2026-03-12",
+   "s": "M",
+   "i": 1154,
+   "p": 21,
+   "pace": 146.2,
+   "extra": true
+  },
+  {
+   "d": "2026-03-13",
+   "s": "M",
+   "i": 1008,
+   "p": 18,
+   "pace": 142.2,
+   "extra": false
+  },
+  {
+   "d": "2026-03-16",
+   "s": "N",
+   "i": 1020,
+   "p": 19,
+   "pace": 123.6,
+   "extra": false
+  },
+  {
+   "d": "2026-03-17",
+   "s": "N",
+   "i": 877,
+   "p": 13,
+   "pace": 112.4,
+   "extra": false
+  },
+  {
+   "d": "2026-03-18",
+   "s": "N",
+   "i": 632,
+   "p": 9,
+   "pace": 95.4,
+   "extra": false
+  },
+  {
+   "d": "2026-03-19",
+   "s": "N",
+   "i": 905,
+   "p": 19,
+   "pace": 111.3,
+   "extra": false
+  }
+ ],
+ "palletBuckets": [
+  {
+   "label": "≤20",
+   "n": 0
+  },
+  {
+   "label": "21–40",
+   "n": 0
+  },
+  {
+   "label": "41–60",
+   "n": 24
+  },
+  {
+   "label": "61–80",
+   "n": 30
+  },
+  {
+   "label": "81–100",
+   "n": 0
+  },
+  {
+   "label": "100+",
+   "n": 0
+  }
+ ],
+ "insight": "Synthetic demo data, included so this view renders without publishing real shift records. Typical shift: 899 items across 16 pallets. The 1,147 target is reached on 7% of sessions in this sample."
+}
