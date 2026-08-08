@@ -98,7 +98,11 @@ Schema details in [`site/supabase_schema.sql`](site/supabase_schema.sql).
 
 ## Analysis view
 
-[`dashboard/index.html`](dashboard/index.html) is a standalone web view that reads an exported log file and renders shift, day, week, and month breakdowns. Point it at your exported log file to visualize your shift stats.
+[`dashboard/index.html`](dashboard/index.html) is a standalone web view that reads an exported log file and renders shift, day, week and month breakdowns.
+
+![Analysis view](docs/screenshots/analysis-view.png)
+
+It ships with a synthetic demo dataset so it renders on open. Real shift records are not published here. Point it at your own export to see your own numbers.
 
 ## Build and release
 
