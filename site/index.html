@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stacked : Join the pilot</title>
+  <title>Stacked: Join the pilot</title>
   <meta name="description" content="Stacked: one-handed pallet logging for warehouse shifts. Join the Android pilot, download the APK, and help start the Play Store test." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -337,22 +337,22 @@
 
     <p class="footer">
       Privacy policy:
-      <a href="#download-card">Privacy policy summary</a>
-      : Built for warehouse pickers : Production pilot
+      <a href="https://docs.google.com/document/d/e/2PACX-1vQ026Pr-r13kJPYStsmu2bs2oQLVxF17Rw7rbgUVBUCOrHW08w6xlmaAMpGAKznNule2fgAfAIWZKAx/pub" target="_blank" rel="noopener">UK GDPR summary</a>
+      · Built for warehouse pickers · Pilot N ≈ 25–30
     </p>
   </div>
 
   <script>
     // ── Config (edit after each release if needed) ─────────────────────────
     const CONFIG = {
-      // Prefer a public HTTPS URL (Drive / R2 / CDN). Private GitHub Releases
-      // need a logged-in GitHub session and will 404 for most phones.
-      apkUrl: 'https://github.com/example/stacked/releases/latest/download/app-release.apk',
+      // Public HTTPS APK. Hosted on the public stacked-public GitHub Release
+      // so phones can download without a GitHub login.
+      apkUrl: 'https://github.com/k-saicharan/stacked-public/releases/latest/download/app-release.apk',
       // Optional: Play Console Internal/Closed opt-in link once you create it
       playOptInUrl: '',
       // Supabase (same project as app telemetry; pilot_signups table)
-      supabaseUrl: 'https://YOUR_PROJECT.supabase.co',
-      supabaseAnonKey: 'YOUR_PUBLISHABLE_KEY',
+      supabaseUrl: 'https://eaywswtmjdzgogxvmebt.supabase.co',
+      supabaseAnonKey: 'sb_publishable_MUU6iDmHxuurhqca8FZObA_a0eIxSh2',
     };
 
     const form = document.getElementById('signup-form');
@@ -370,10 +370,12 @@
       playBtn.classList.remove('hidden');
     }
 
-    // Detect private-release friction
-    if (CONFIG.apkUrl.includes('github.com') && CONFIG.apkUrl.includes('/releases/')) {
+    // Warn only if this still points at the private repo (login wall).
+    if (CONFIG.apkUrl.includes('k-saicharan/stacked/releases')) {
       downloadNote.textContent =
-        'If download fails with a login wall, check that the release build asset URL is publicly accessible.';
+        'If download fails with a login wall, the APK is still on a private repo. Use the public mirror on stacked-public instead.';
+    } else {
+      downloadNote.textContent = 'v1.0.7+8 · signed release · no GitHub login required.';
     }
 
     function isValidEmail(v) {
@@ -433,7 +435,7 @@
       } catch (err) {
         console.error(err);
         statusEl.className = 'status err';
-        statusEl.textContent = 'Network error. Check connection : or download the APK below anyway.';
+        statusEl.textContent = 'Network error. Check connection, or download the APK below anyway.';
       } finally {
         btn.disabled = false;
       }
