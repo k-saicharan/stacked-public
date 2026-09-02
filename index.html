@@ -153,13 +153,13 @@
       <h2>Thanks. Here is the app.</h2>
       <p id="thanks-line">You are on the list. Download Stacked and you can start logging on this phone.</p>
       <a class="btn btn-primary" id="apk" rel="noopener">Download the app</a>
-      <p class="hint">Android APK. Allow install from this browser if asked.</p>
+      <p class="hint">Android only for now. Sorry if you are on iPhone. We are working on iOS. Allow install from this browser if Android asks.</p>
     </section>
   </div>
 
   <script>
     const APK = 'https://github.com/k-saicharan/stacked-public/releases/latest/download/app-release.apk';
-    const MAIL = 'saicharan9977@gmail.com';
+    const FORM_ID = '8acbf52ea72e50d8f56ecb979e3c0429';
     document.getElementById('apk').href = APK;
 
     const state = { email: '', help: false };
@@ -183,7 +183,7 @@
         pilot_email: 'yes',
         _subject: 'Stacked pilot signup',
       };
-      const res = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(MAIL), {
+      const res = await fetch('https://formsubmit.co/ajax/' + FORM_ID, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
