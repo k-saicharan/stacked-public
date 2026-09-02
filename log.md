@@ -1,5 +1,13 @@
 # Project Activity Log: Stacked (Public Version)
 
+## 2026-09-02
+
+### Strip landing page + QR
+- Join page is now download, thanks, three optional agrees, and email. No extra copy.
+- Emails go to Gmail via formsubmit so a paused Supabase project cannot swallow signups.
+- QR (`site/qr.png`) encodes https://k-saicharan.github.io/stacked-public/
+- Operator display: https://k-saicharan.github.io/stacked-public/show.html
+
 ## 2026-08-22
 
 ### Public APK + join page
