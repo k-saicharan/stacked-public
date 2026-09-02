@@ -8,7 +8,7 @@ by: Grok
 - Join page is GitHub Pages on the `gh-pages` branch: https://k-saicharan.github.io/stacked-public/
 - Public APK is the GitHub Release asset `app-release.apk` (v1.0.7+8). Phones can download it without a GitHub login.
 - Source of the signed binary is the private app at `~/Projects/Work /pallet_tracker/` (`com.saicharan.stacked`). This public repo is the distribution surface, not a second product.
-- Landing page is download + optional agrees + email only. QR: `qr.png` / `show.html`. Emails go to Gmail, not Supabase.
+- Landing page is three cards: email, then help-improve, then download. QR: `qr.png` / `show.html`. Emails go to Gmail, not Supabase.
 
 ## Open
 - Play Console internal/closed track still needs the developer account.

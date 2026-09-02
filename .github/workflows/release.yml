@@ -11,8 +11,26 @@ name: CI
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'site/**'
+      - 'docs/**'
+      - 'dashboard/**'
+      - 'play-store/**'
+      - 'STATUS.md'
+      - 'log.md'
+      - 'README.md'
+      - '**/*.md'
   pull_request:
     branches: [main]
+    paths-ignore:
+      - 'site/**'
+      - 'docs/**'
+      - 'dashboard/**'
+      - 'play-store/**'
+      - 'STATUS.md'
+      - 'log.md'
+      - 'README.md'
+      - '**/*.md'
   workflow_dispatch:
 
 permissions:

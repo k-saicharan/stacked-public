@@ -1,5 +1,12 @@
 # Project Activity Log: Stacked (Public Version)
 
+## 2026-09-02 (later)
+
+### Stepped join page + CI
+- Join page is now email → help improve → download, one card at a time.
+- Fixed `unawaited_return_in_try_block` in `lib/storage.dart` so Flutter CI can go green.
+- Site/docs no longer trigger the Flutter workflow.
+
 ## 2026-09-02
 
 ### Strip landing page + QR

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stacked</title>
-  <meta name="description" content="Download Stacked." />
+  <meta name="description" content="Get Stacked on your phone." />
   <style>
     :root {
       --bg: #0b0e14;
@@ -34,11 +34,34 @@
     h1 {
       font-size: 1.6rem;
       letter-spacing: -0.03em;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .thanks {
+    .dots {
+      display: flex;
+      gap: 8px;
+      margin: 18px 0 22px;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--line);
+    }
+    .dot.on { background: var(--accent); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 18px;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .card p {
       color: var(--muted);
-      margin-bottom: 24px;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
     }
     .btn {
       display: flex;
@@ -52,43 +75,24 @@
       padding: 16px 18px;
       cursor: pointer;
       text-decoration: none;
+      color: inherit;
     }
     .btn-primary {
       background: var(--accent);
       color: var(--on-accent);
-      margin-bottom: 8px;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+      margin-top: 10px;
     }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .hint {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 16px;
-    }
-    .card p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .opt {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 0.9rem;
-      color: var(--text);
-      margin: 10px 0;
-    }
-    .opt input { margin-top: 3px; accent-color: var(--accent); }
     label.field {
       display: block;
       font-size: 0.8rem;
       color: var(--muted);
-      margin: 16px 0 6px;
+      margin-bottom: 6px;
     }
     input[type="email"] {
       width: 100%;
@@ -97,45 +101,59 @@
       border-radius: 10px;
       color: var(--text);
       font: inherit;
-      padding: 12px;
-      margin-bottom: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+    input[type="email"]:focus {
+      outline: none;
+      border-color: var(--accent);
     }
     .status { font-size: 0.85rem; min-height: 1.2em; margin-top: 10px; }
     .ok { color: var(--ok); }
     .err { color: var(--bad); }
+    .hint { font-size: 0.8rem; color: var(--muted); margin-top: 10px; }
+    .hidden { display: none !important; }
     .hp { position: absolute; left: -9999px; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>Stacked</h1>
-    <p class="thanks">Thanks for downloading the app.</p>
+    <div class="dots" aria-hidden="true">
+      <span class="dot on" id="d1"></span>
+      <span class="dot" id="d2"></span>
+      <span class="dot" id="d3"></span>
+    </div>
 
-    <a class="btn btn-primary" id="apk" rel="noopener">Download the app</a>
-    <p class="hint">Android APK. Allow install from this browser if asked.</p>
-
-    <section class="card">
-      <p>Feel free to agree to any of these so we can improve the app.</p>
-      <form id="form" novalidate>
-        <label class="opt">
-          <input type="checkbox" id="play" />
-          <span>Add my Google email to the Play Store tester list.</span>
-        </label>
-        <label class="opt">
-          <input type="checkbox" id="totals" />
-          <span>I am willing to share anonymous shift totals from inside the app. Notes stay on the phone.</span>
-        </label>
-        <label class="opt">
-          <input type="checkbox" id="updates" />
-          <span>You can email me about this pilot.</span>
-        </label>
-
-        <label class="field" for="email">Google email</label>
+    <section class="card" id="step1">
+      <h2>Your Google email</h2>
+      <p>Same address as your Play Store. We use it to add you as a tester when the listing is ready.</p>
+      <form id="email-form" novalidate>
+        <label class="field" for="email">Email</label>
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" />
-        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@gmail.com" />
-        <button type="submit" class="btn btn-primary" id="save">Save</button>
-        <p class="status" id="status" role="status"></p>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@gmail.com" required />
+        <button type="submit" class="btn btn-primary" id="email-btn">Continue</button>
+        <p class="status" id="email-status" role="status"></p>
       </form>
+    </section>
+
+    <section class="card hidden" id="step2">
+      <h2>Want to help make it better?</h2>
+      <p>
+        If you say yes, Stacked can share anonymous shift totals: pallets, items, and how long the shift ran.
+        That is how we actually improve the app for the next person on the floor.
+        Notes stay on your phone. Nothing with your name on it leaves the device.
+      </p>
+      <button type="button" class="btn btn-primary" id="yes-btn">Yes, I am in</button>
+      <button type="button" class="btn btn-secondary" id="skip-btn">Not this time</button>
+      <p class="status" id="help-status" role="status"></p>
+    </section>
+
+    <section class="card hidden" id="step3">
+      <h2>Thanks. Here is the app.</h2>
+      <p id="thanks-line">You are on the list. Download Stacked and you can start logging on this phone.</p>
+      <a class="btn btn-primary" id="apk" rel="noopener">Download the app</a>
+      <p class="hint">Android APK. Allow install from this browser if asked.</p>
     </section>
   </div>
 
@@ -144,85 +162,84 @@
     const MAIL = 'saicharan9977@gmail.com';
     document.getElementById('apk').href = APK;
 
-    const form = document.getElementById('form');
-    const emailEl = document.getElementById('email');
-    const statusEl = document.getElementById('status');
-    const saveBtn = document.getElementById('save');
+    const state = { email: '', help: false };
+
+    function showStep(n) {
+      [1, 2, 3].forEach((i) => {
+        document.getElementById('step' + i).classList.toggle('hidden', i !== n);
+        document.getElementById('d' + i).classList.toggle('on', i === n);
+      });
+    }
 
     function validEmail(v) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     }
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusEl.className = 'status';
-      statusEl.textContent = '';
-
-      const email = (emailEl.value || '').trim().toLowerCase();
-      const play = document.getElementById('play').checked;
-      const totals = document.getElementById('totals').checked;
-      const updates = document.getElementById('updates').checked;
-      const honey = (form.querySelector('[name="website"]').value || '').trim();
-
-      if (honey) return;
-
-      if (!play && !totals && !updates) {
-        statusEl.className = 'status err';
-        statusEl.textContent = 'Tick at least one box, or just download the app above.';
-        return;
-      }
-      if (!validEmail(email)) {
-        statusEl.className = 'status err';
-        statusEl.textContent = 'Enter the Google email on your Play Store.';
-        emailEl.focus();
-        return;
-      }
-
-      saveBtn.disabled = true;
-      statusEl.textContent = 'Saving…';
-
+    async function saveSignup() {
       const payload = {
-        email,
-        play_tester: play ? 'yes' : 'no',
-        share_totals: totals ? 'yes' : 'no',
-        pilot_email: updates ? 'yes' : 'no',
+        email: state.email,
+        play_tester: 'yes',
+        share_totals: state.help ? 'yes' : 'no',
+        pilot_email: 'yes',
         _subject: 'Stacked pilot signup',
       };
+      const res = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(MAIL), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      return res.json().catch(() => ({}));
+    }
 
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(MAIL), {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify(payload),
-        });
-        const body = await res.json().catch(() => ({}));
-        if (res.ok) {
-          statusEl.className = 'status ok';
-          statusEl.textContent = body.message && /confirm/i.test(body.message)
-            ? 'Saved. If this is the first signup, confirm the email that just arrived, then later signups land automatically.'
-            : 'Saved. Thanks.';
-          try { localStorage.setItem('stacked_pilot_email', email); } catch (_) {}
-        } else {
-          throw new Error(String(res.status));
-        }
-      } catch (err) {
-        const q = new URLSearchParams({
-          subject: 'Stacked pilot',
-          body: 'Email: ' + email + '\nPlay tester: ' + (play ? 'yes' : 'no') + '\nShare totals: ' + (totals ? 'yes' : 'no') + '\nUpdates: ' + (updates ? 'yes' : 'no'),
-        });
-        statusEl.className = 'status err';
-        statusEl.innerHTML = 'Could not save automatically. <a href="mailto:' + MAIL + '?' + q.toString() + '" style="color:var(--accent)">Tap here to send it</a>. The download above still works.';
-      } finally {
-        saveBtn.disabled = false;
+    document.getElementById('email-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = document.getElementById('email-status');
+      const honey = document.querySelector('[name="website"]').value.trim();
+      if (honey) return;
+      const email = (document.getElementById('email').value || '').trim().toLowerCase();
+      if (!validEmail(email)) {
+        status.className = 'status err';
+        status.textContent = 'Enter the Google email on your Play Store.';
+        document.getElementById('email').focus();
+        return;
       }
+      state.email = email;
+      try { localStorage.setItem('stacked_pilot_email', email); } catch (_) {}
+      status.textContent = '';
+      showStep(2);
     });
+
+    async function finishHelp(help) {
+      state.help = help;
+      const status = document.getElementById('help-status');
+      const yesBtn = document.getElementById('yes-btn');
+      const skipBtn = document.getElementById('skip-btn');
+      yesBtn.disabled = true;
+      skipBtn.disabled = true;
+      status.className = 'status';
+      status.textContent = 'Saving…';
+      const thanks = document.getElementById('thanks-line');
+      thanks.textContent = help
+        ? 'Thank you. That helps us make Stacked better. Download it and you can start logging on this phone.'
+        : 'No problem. Download Stacked and you can start logging on this phone.';
+      try {
+        await saveSignup();
+      } catch (_) {
+        // Download still works if the email save misses.
+      }
+      showStep(3);
+    }
+
+    document.getElementById('yes-btn').addEventListener('click', () => finishHelp(true));
+    document.getElementById('skip-btn').addEventListener('click', () => finishHelp(false));
 
     try {
       const prev = localStorage.getItem('stacked_pilot_email');
-      if (prev) emailEl.value = prev;
+      if (prev) document.getElementById('email').value = prev;
     } catch (_) {}
   </script>
 </body>
